@@ -1,0 +1,9 @@
+Model\Vehiculo.class
+Model\CuotaArriendo.class
+Controller\ArriendoCuotas.class
+Clientes\main.class
+Model\ArriendoCuota.class
+View\Clientes.class
+Model\Arriendo.class
+Model\Cliente.class
+Controller\PagarCuotasArriendo.class
