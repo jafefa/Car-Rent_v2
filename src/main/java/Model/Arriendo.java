@@ -70,5 +70,8 @@ public double obtenerMontoApagar(int precioDia){
 public boolean evaluarArriendo(){
 return this.cli.isVigente() == true && Character.compare(this.veh.getCondicion(), 'D')==0;
 }
+public void msj(String msj){
+    System.out.println(msj);
+}
 
 }
