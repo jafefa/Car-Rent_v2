@@ -14,7 +14,7 @@ public class main {
       arrCli[2] = new Cliente("153654255","Jose");
       
       Vehiculo veh = new Vehiculo("ljhd54");
-      ArriendoCuota arr = new ArriendoCuota(6,1,"12-12-2021",2,cli,veh);
+      ArriendoCuota arr = new ArriendoCuota(6,1,"12-12-2021",2,arrCli[0],veh);
       arr.ingresarArriendoConCuota(1000);
           System.out.println(arr.toString());
           System.out.println(arr.getCli().toString()+","+arr.getVeh().toString());
