@@ -20,23 +20,26 @@ public class arriendoCuotasImpl extends JPanel {
             arrNom[i]=arr.getNombre();
             i++;
         }
-        this.selCli = new JComboBox(arrNom);
-        this.selVeh = new JComboBox();
+        String[] arrPat = {"ljhs54","ljhs54","ljhs54"};
+        selCli = new JComboBox(arrNom); 
+        this.selVeh = new JComboBox(arrPat);
         this.cuotas = new JLabel("Cantidad de cuotas");
         this.txtCuotas = new JTextField(2);
         
         
     }
     public void crearGUI(JFrame ventana){
+        //primer panel con selectores
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
+        Dimension dm = new Dimension(100,10);
         panel.add(this.cuotas);
         panel.add(this.txtCuotas);
         panel.add(this.selCli);      
         panel.add(this.selVeh);
 
         
-        this.setLayout(new GridLayout(2,3));
+        this.setLayout(new BorderLayout());
         this.add(panel,BorderLayout.CENTER);
         setBackground(new Color(200,204,255));
         panel.setBackground(new Color(100,204,255));
