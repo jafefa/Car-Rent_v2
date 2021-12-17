@@ -21,22 +21,25 @@ public class arriendoCuotasImpl extends JPanel {
             i++;
         }
         this.selCli = new JComboBox(arrNom);
+        this.selVeh = new JComboBox();
         this.cuotas = new JLabel("Cantidad de cuotas");
         this.txtCuotas = new JTextField(2);
+        
         
     }
     public void crearGUI(JFrame ventana){
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout());
-        panel.add(this.txtCuotas);
         panel.add(this.cuotas);
-        panel.add(this.selCli);
+        panel.add(this.txtCuotas);
+        panel.add(this.selCli);      
+        panel.add(this.selVeh);
 
         
-        this.setLayout(new BorderLayout());
+        this.setLayout(new GridLayout(2,3));
         this.add(panel,BorderLayout.CENTER);
-        //setBackground(Color.GRAY);
-        panel.setBackground(Color.WHITE);
+        setBackground(new Color(200,204,255));
+        panel.setBackground(new Color(100,204,255));
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setVisible(true);
         ventana.setSize(800,200);
