@@ -30,19 +30,24 @@ public class arriendoCuotasImpl extends JPanel {
     }
     public void crearGUI(JFrame ventana){
         //primer panel con selectores
+       
         JPanel panel = new JPanel();
+        JPanel panel2 = new JPanel();
+        panel2.setLayout(new FlowLayout());
         panel.setLayout(new FlowLayout());
-        Dimension dm = new Dimension(100,10);
         panel.add(this.cuotas);
         panel.add(this.txtCuotas);
-        panel.add(this.selCli);      
-        panel.add(this.selVeh);
-
-        
+        panel2.add(this.selCli);
+        panel2.add(this.selVeh);
         this.setLayout(new BorderLayout());
-        this.add(panel,BorderLayout.CENTER);
+        this.add(panel,BorderLayout.NORTH);
+        this.add(panel2,BorderLayout.WEST);
+        panel2.
         setBackground(new Color(200,204,255));
         panel.setBackground(new Color(100,204,255));
+        
+       
+        
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setVisible(true);
         ventana.setSize(800,200);
