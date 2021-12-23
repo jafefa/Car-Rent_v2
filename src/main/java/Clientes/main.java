@@ -26,7 +26,7 @@ public class main {
         JFrame ventana = new JFrame("Arrendador de autos");
         arriendoCuotasImpl vista = new arriendoCuotasImpl(arrCli);
         agregarCliente vista2 = new agregarCliente();
-        pagarCuota vista3 = new pagarCuota();
+        pagarCuota cuota = new pagarCuota(ventana);
        
         //ventana.setContentPane(vista3);
         //vista3.crearGUI(ventana);
@@ -34,9 +34,8 @@ public class main {
         //ventana.setContentPane(vista2);
         //vista2.crearGUI(ventana);
         
-        ventana.setContentPane(vista);
-        vista.crearGUI(ventana);
-          
+        ventana.setContentPane(cuota);
+         
           
       
 
