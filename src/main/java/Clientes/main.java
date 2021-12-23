@@ -3,9 +3,10 @@ package Clientes;
 import Model.ArriendoCuota;
 import Model.Cliente;
 import Model.Vehiculo;
-import View.agregarCliente;
-import View.arriendoCuotasImpl;
-import View.pagarCuota;
+import View.AgregarCliente;
+import View.ArriendoConCuotas;
+import View.Menu;
+
 import javax.swing.*;
 
 public class main {
@@ -16,25 +17,31 @@ public class main {
       arrCli[2] = new Cliente("153654255","Jose");
       
       Vehiculo veh = new Vehiculo("ljhd54");
-      ArriendoCuota arr = new ArriendoCuota(6,1,"12-12-2021",2,arrCli[0],veh);
+      ArriendoCuota arr = new ArriendoCuota(6,"12-12-2021",2,arrCli[0],veh);
+       ArriendoCuota arr1 = new ArriendoCuota(6,"12-12-2021",2,arrCli[0],veh);
       arr.ingresarArriendoConCuota(1000);
           System.out.println(arr.toString());
-          System.out.println(arr.getCli().toString()+","+arr.getVeh().toString());
-      arr.pagarCuota(0);
+          System.out.println(arr.getCli().toString()+","+arr.getVeh().toString()+arr.getNumArriendo());
+          System.out.println(arr1.getCli().toString()+","+arr1.getVeh().toString()+arr1.getNumArriendo());
+          arr.pagarCuota(0);
           System.out.println(arr.toString());
           
         JFrame ventana = new JFrame("Arrendador de autos");
-        arriendoCuotasImpl vista = new arriendoCuotasImpl(arrCli);
-        agregarCliente vista2 = new agregarCliente();
-        pagarCuota cuota = new pagarCuota(ventana);
+        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventana.setVisible(true);
+        ventana.setSize(650,350);
+        
+        AgregarCliente agregar = new AgregarCliente();
+        Menu menu = new Menu();
+        ArriendoConCuotas arriendo = new ArriendoConCuotas();
        
-        //ventana.setContentPane(vista3);
-        //vista3.crearGUI(ventana);
+        //ventana.setContentPane(vista2);
+        //vista2.crearGUI(ventana);
         
         //ventana.setContentPane(vista2);
         //vista2.crearGUI(ventana);
         
-        ventana.setContentPane(cuota);
+        ventana.setContentPane(arriendo);
          
           
       
