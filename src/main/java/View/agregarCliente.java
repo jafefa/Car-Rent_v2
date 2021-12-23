@@ -7,9 +7,9 @@ import javax.swing.*;
 
 public class agregarCliente extends JPanel{
 
-    public final JLabel ced,nombre,vig;
-    public final JTextField txtCed,txtNombre,txtVig;
-    public final JButton agregar;
+    private final JLabel ced,nombre,vig;
+    private final JTextField txtCed,txtNombre,txtVig;
+    private final JButton agregar;
     
     public agregarCliente(){
     

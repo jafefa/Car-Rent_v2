@@ -3,7 +3,9 @@ package Clientes;
 import Model.ArriendoCuota;
 import Model.Cliente;
 import Model.Vehiculo;
+import View.agregarCliente;
 import View.arriendoCuotasImpl;
+import View.pagarCuota;
 import javax.swing.*;
 
 public class main {
@@ -23,7 +25,14 @@ public class main {
           
         JFrame ventana = new JFrame("Arrendador de autos");
         arriendoCuotasImpl vista = new arriendoCuotasImpl(arrCli);
+        agregarCliente vista2 = new agregarCliente();
+        pagarCuota vista3 = new pagarCuota();
        
+        //ventana.setContentPane(vista3);
+        //vista3.crearGUI(ventana);
+        
+        //ventana.setContentPane(vista2);
+        //vista2.crearGUI(ventana);
         
         ventana.setContentPane(vista);
         vista.crearGUI(ventana);
