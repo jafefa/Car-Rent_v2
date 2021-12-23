@@ -121,7 +121,7 @@ public class arriendoCuotasImpl extends JPanel {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setVisible(true);
         ventana.setResizable(false);
-        ventana.setSize(800,300);
+        ventana.setSize(800,400);
         
 
     
