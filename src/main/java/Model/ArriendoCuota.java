@@ -3,7 +3,15 @@ package Model;
 import java.util.ArrayList;
 public class ArriendoCuota extends Arriendo{
     private int cantCuotas;
-    private ArrayList<CuotaArriendo> arrCuota;
+    public ArrayList<CuotaArriendo> arrCuota;
+
+    public ArrayList<CuotaArriendo> getArrCuota() {
+        return arrCuota;
+    }
+
+    public void setArrCuota(ArrayList<CuotaArriendo> arrCuota) {
+        this.arrCuota = arrCuota;
+    }
     
     //constructor
     public ArriendoCuota(int cantCuotas, String fecArr, int diasArriendo,Cliente cli,Vehiculo veh ) {
