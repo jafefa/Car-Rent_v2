@@ -7,6 +7,7 @@ public class Arriendo {
  private int diasArriendo;
  private Cliente cli;
  private Vehiculo veh;
+ public static int contador = 0;
 
     public Cliente getCli() {
         return cli;
@@ -24,8 +25,8 @@ public class Arriendo {
         this.veh = veh;
     }
 
-    public Arriendo(int numArriendo, String fecArr, int diasArriendo,Cliente cli,Vehiculo veh ) {
-        this.numArriendo = numArriendo;
+    public Arriendo(String fecArr, int diasArriendo,Cliente cli,Vehiculo veh ) { 
+        this.numArriendo = contador++;
         this.fecArr = fecArr;
         this.diasArriendo = diasArriendo;
         this.cli = cli;
@@ -63,9 +64,9 @@ public class Arriendo {
 
 public void Arriendo(int numA,String fec, int dias){
 }
-public double obtenerMontoApagar(int precioDia){
-    double monto = this.diasArriendo*precioDia;
-    return monto;
+public int obtenerMontoApagar(int precioDia){
+    int monto = this.diasArriendo*precioDia;
+    return  monto;
 }
 public boolean evaluarArriendo(){
 return this.cli.isVigente() == true && Character.compare(this.veh.getCondicion(), 'D')==0;

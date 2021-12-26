@@ -6,8 +6,8 @@ public class ArriendoCuota extends Arriendo{
     private ArrayList<CuotaArriendo> arrCuota;
     
     //constructor
-    public ArriendoCuota(int cantCuotas, int numArriendo, String fecArr, int diasArriendo,Cliente cli,Vehiculo veh ) {
-        super(numArriendo, fecArr, diasArriendo, cli, veh);
+    public ArriendoCuota(int cantCuotas, String fecArr, int diasArriendo,Cliente cli,Vehiculo veh ) {
+        super( fecArr, diasArriendo, cli, veh);
         this.arrCuota = new ArrayList();
         this.cantCuotas = cantCuotas;
     }
@@ -28,21 +28,21 @@ public class ArriendoCuota extends Arriendo{
 
   
     
-    public void ArriendoCuota(int numA,String fec, int dias, int cantCuo){
-    }
     public boolean ingresarArriendoConCuota(int precioDia){
         if(this.evaluarArriendo()){
             this.getVeh().setCondicion('A');
-            generaCuotas((int) this.obtenerMontoApagar(precioDia));        
+            generaCuotas( this.obtenerMontoApagar(precioDia));        
             return true;
         }
         return false;
     }
     public ArrayList<CuotaArriendo> generaCuotas(int montoaPagar){
-        int valorCuota = montoaPagar/this.cantCuotas;
+        int valorCuota = montoaPagar/cantCuotas;
+
         for(int i=0;i<this.cantCuotas;i++){
             var cuota = new CuotaArriendo(i,valorCuota);
-            this.arrCuota.add(cuota);        
+            this.arrCuota.add(cuota);
+            
             }
         return this.arrCuota;
     }
@@ -56,6 +56,7 @@ public class ArriendoCuota extends Arriendo{
         }
         return false;
     }
+    
 
 
 }
