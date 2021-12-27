@@ -2,7 +2,7 @@
 package View;
 import Controller.ControladorMenu;
 import javax.swing.JFrame;
-public class Menu extends javax.swing.JPanel {
+public class Menu extends javax.swing.JPanel implements IVista {
 
     public Menu() {
         initComponents();
@@ -11,7 +11,8 @@ public class Menu extends javax.swing.JPanel {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+	@Override
+    public void initComponents() {
 
         BotonCrearCliente = new javax.swing.JButton();
         botonArriendoCuotas = new javax.swing.JButton();

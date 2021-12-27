@@ -40,7 +40,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="196" max="32767" attributes="0"/>
+              <EmptySpace pref="194" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -115,7 +115,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="agregarCliente">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Agregar y cerrar"/>
+        <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarClienteActionPerformed"/>

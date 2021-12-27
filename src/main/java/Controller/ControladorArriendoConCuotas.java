@@ -23,17 +23,20 @@ public class ControladorArriendoConCuotas {
          ventana.setContentPane(agregar);    
         
     }
-     public static String crearArriendo(Cliente Cli, Vehiculo Veh, String Fec, int Cuot, int Dias,int precioDia){
+     /*public static String crearArriendo(Cliente Cli, Vehiculo Veh, String Fec, int Cuot, int Dias,int precioDia){
          ArriendoCuota arriendo = new ArriendoCuota(Cuot,Fec,Dias,Cli,Veh);
-         arriendo.ingresarArriendoConCuota(precioDia);
+         
          listArriendo.add(arriendo);
          
          return calcularMonto(arriendo,precioDia);
-     }
+     }*/
      
      public static ArriendoCuota arriendo( int Cuot,String Fec, int Dias,Cliente Cli, Vehiculo Veh, int precioDia ){
          ArriendoCuota arriendo = new ArriendoCuota(Cuot,Fec,Dias,Cli,Veh);
-         arriendo.ingresarArriendoConCuota(precioDia);
+         if(arriendo.ingresarArriendoConCuota(precioDia)){
+             System.out.println("Arriendo exitoso");
+         }
+         
          listArriendo.add(arriendo);   
          System.out.println(arriendo);
          return arriendo;

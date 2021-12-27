@@ -39,7 +39,8 @@ public class ArriendoCuota extends Arriendo{
     public boolean ingresarArriendoConCuota(int precioDia){
         if(this.evaluarArriendo()){
             this.getVeh().setCondicion('A');
-            generaCuotas( this.obtenerMontoApagar(precioDia));        
+            generaCuotas( this.obtenerMontoApagar(precioDia)); 
+
             return true;
         }
         return false;

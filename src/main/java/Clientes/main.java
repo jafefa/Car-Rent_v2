@@ -19,9 +19,6 @@ public class main {
         ventana.setVisible(true);
         ventana.setResizable(false);
         ventana.setSize(700,400);
-        
-       
-       
 
   }
 }

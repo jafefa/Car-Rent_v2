@@ -1,4 +1,3 @@
-
 package View;
 
 import Controller.ControladorAgregarCliente;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JPanel;
 
-public class ArriendoConCuotas extends JPanel {
+public class ArriendoConCuotas extends JPanel implements IVista {
 
     public ArriendoConCuotas() {
         initComponents();
@@ -20,7 +19,8 @@ public class ArriendoConCuotas extends JPanel {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+	@Override
+    public void initComponents() {
 
         selCli = new javax.swing.JComboBox<>();
         ingresarCliente = new javax.swing.JButton();
@@ -230,32 +230,35 @@ public class ArriendoConCuotas extends JPanel {
     private void GuardarArriendoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarArriendoActionPerformed
         ArrayList<Cliente> listaClientes = ControladorAgregarCliente.listaClientes;
         Cliente cli = null;
+        Vehiculo veh = null;
+        ArriendoCuota arriendo = null;
+        String txtCuotas = "";
         ArrayList<Vehiculo> listaVehiculo = new ArrayList();
-        
-        for(Cliente arr:listaClientes){
-            if(arr.getNombre().equals(selCli.getSelectedItem().toString()))
+
+        for (Cliente arr : listaClientes) {
+            if (arr.getNombre().equals(this.selCli.getSelectedItem().toString())) {
                 cli = arr;
-                Vehiculo veh = new Vehiculo((String) this.selVeh1.getSelectedItem());
-                ArriendoCuota arriendo = ControladorArriendoConCuotas.arriendo(
+                veh = new Vehiculo((String) this.selVeh1.getSelectedItem());
+                arriendo = ControladorArriendoConCuotas.arriendo(
                         Integer.parseInt(this.txtCuotas.getText()),
                         txtFecha.getText(),
                         Integer.parseInt(this.txtDias.getText()),
                         cli,
                         veh,
                         Integer.parseInt(this.txtPrecio.getText())
-                        ); //instancia un arriendo
-                txtMonto.setText(ControladorArriendoConCuotas.calcularMonto(arriendo,Integer.parseInt(this.txtPrecio.getText()))); //setea el monto a pagar en campo de texto
-                String txtCuotas = "";
-            for (CuotaArriendo arrCuota : arriendo.getArrCuota()) {
-                txtCuotas = txtCuotas+String.valueOf(arrCuota.getNumCuota())+"\t"+String.valueOf(arrCuota.getValorCuota())+"\t"+String.valueOf(arrCuota.isPagada()+"\n");
-                
-            }
+                ); //instancia un arriendo
+                for (CuotaArriendo arrCuota : arriendo.getArrCuota()) {
+                    txtCuotas = txtCuotas + String.valueOf(arrCuota.getNumCuota()) + "\t" + String.valueOf(arrCuota.getValorCuota()) + "\t" + String.valueOf(arrCuota.isPagada() + "\n");
+
+            txtMonto.setText(ControladorArriendoConCuotas.calcularMonto(arriendo, Integer.parseInt(this.txtPrecio.getText()))); //setea el monto a pagar en campo de texto
             this.AreaCuotas.setText(txtCuotas);
-                
-                
+
+                }
+            }
+
         }
-    
-        
+
+
     }//GEN-LAST:event_GuardarArriendoActionPerformed
 
     private void ingresarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarClienteMouseClicked
