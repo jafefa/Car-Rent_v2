@@ -11,7 +11,8 @@ public class ControladorAgregarCliente {
    
     
 public static void agregarCliente(String nombre, String ced, Boolean vig){
-    Cliente cli = new Cliente(ced,nombre);
+    Cliente cli = new Cliente(ced,nombre,vig);
+    System.out.println(cli);
     listaNombres.add(cli.getNombre()); 
     listaClientes.add(cli);
     
