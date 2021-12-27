@@ -3,6 +3,7 @@ package View;
 
 import Controller.ControladorAgregarCliente;
 import Controller.ControladorArriendoConCuotas;
+import Controller.ControladorMenu;
 import Model.ArriendoCuota;
 import Model.Cliente;
 import Model.CuotaArriendo;
@@ -223,7 +224,7 @@ public class ArriendoConCuotas extends JPanel {
     }//GEN-LAST:event_selCliActionPerformed
 
     private void ingresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarClienteActionPerformed
-        ControladorArriendoConCuotas.abrirVentanaAgregar();
+        ControladorMenu.abrirVentanaAgregar();
     }//GEN-LAST:event_ingresarClienteActionPerformed
 
     private void GuardarArriendoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarArriendoActionPerformed
