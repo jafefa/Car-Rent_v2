@@ -5,7 +5,7 @@ import Controller.ControladorAgregarCliente;
 import Controller.ControladorMenu;
 import javax.swing.JFrame;
 
-public class AgregarCliente extends javax.swing.JPanel  implements IMenu {
+public class AgregarCliente extends javax.swing.JPanel  implements IAgregarCliente {
 
     /**
      * Creates new form AgregarCliente
