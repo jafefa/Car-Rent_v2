@@ -6,10 +6,10 @@ public class Cliente {
  private String nombre;
  private boolean vigente;
 
-    public Cliente(String cedula, String nombre) {
+    public Cliente(String cedula, String nombre, boolean vig) {
         this.setCedula(cedula);
         this.nombre = nombre;
-        this.vigente = true;
+        this.vigente = vig;
     }
 
     public String getCedula() {

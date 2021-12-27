@@ -14,8 +14,10 @@ public class Menu extends javax.swing.JPanel {
     private void initComponents() {
 
         BotonCrearCliente = new javax.swing.JButton();
-        botonPagarCuota = new javax.swing.JButton();
         botonArriendoCuotas = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(204, 204, 255));
+        setMinimumSize(new java.awt.Dimension(650, 450));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -31,18 +33,6 @@ public class Menu extends javax.swing.JPanel {
         BotonCrearCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCrearClienteActionPerformed(evt);
-            }
-        });
-
-        botonPagarCuota.setText("Pagar Cuota");
-        botonPagarCuota.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonPagarCuotaMouseClicked(evt);
-            }
-        });
-        botonPagarCuota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonPagarCuotaActionPerformed(evt);
             }
         });
 
@@ -67,7 +57,6 @@ public class Menu extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonCrearCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonPagarCuota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonArriendoCuotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(226, Short.MAX_VALUE))
         );
@@ -80,9 +69,7 @@ public class Menu extends javax.swing.JPanel {
                 .addComponent(BotonCrearCliente)
                 .addGap(18, 18, 18)
                 .addComponent(botonArriendoCuotas)
-                .addGap(18, 18, 18)
-                .addComponent(botonPagarCuota)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -93,20 +80,12 @@ public class Menu extends javax.swing.JPanel {
         
     }//GEN-LAST:event_BotonCrearClienteMouseClicked
 
-    private void botonPagarCuotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPagarCuotaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonPagarCuotaMouseClicked
-
-    private void botonPagarCuotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPagarCuotaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonPagarCuotaActionPerformed
-
     private void botonArriendoCuotasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonArriendoCuotasMouseClicked
        ControladorMenu.abrirVentanaArriendo();
     }//GEN-LAST:event_botonArriendoCuotasMouseClicked
 
     private void botonArriendoCuotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonArriendoCuotasActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_botonArriendoCuotasActionPerformed
 
     private void BotonCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearClienteActionPerformed
@@ -117,7 +96,6 @@ public class Menu extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonCrearCliente;
     private javax.swing.JButton botonArriendoCuotas;
-    private javax.swing.JButton botonPagarCuota;
     private final javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
     // End of variables declaration//GEN-END:variables
 }

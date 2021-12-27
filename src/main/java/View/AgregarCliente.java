@@ -52,7 +52,7 @@ public class AgregarCliente extends javax.swing.JPanel {
             }
         });
 
-        agregarCliente.setText("Agregar");
+        agregarCliente.setText("Agregar y cerrar");
         agregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarClienteActionPerformed(evt);
@@ -61,9 +61,19 @@ public class AgregarCliente extends javax.swing.JPanel {
 
         vigente.setSelected(true);
         vigente.setText("¿ Vigente ?");
+        vigente.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                vigenteItemStateChanged(evt);
+            }
+        });
         vigente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vigenteActionPerformed(evt);
+            }
+        });
+        vigente.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                vigenteItemStateChanged(evt);
             }
         });
 
@@ -135,20 +145,27 @@ public class AgregarCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void agregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteActionPerformed
-        
-        ControladorAgregarCliente.agregarCliente(txtNombre.getText(),txtCedula.getText() , Boolean.TRUE);
+
+        ControladorAgregarCliente.agregarCliente(txtNombre.getText(),txtCedula.getText() , this.check);
         txtNombre.setText("");
         txtCedula.setText("");
         successCreate.setVisible(true);
     }//GEN-LAST:event_agregarClienteActionPerformed
 
     private void vigenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vigenteActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_vigenteActionPerformed
 
     private void txtCedulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaKeyTyped
         successCreate.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_txtCedulaKeyTyped
+
+    private void vigenteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_vigenteItemStateChanged
+        if(evt.getStateChange()==1){
+            this.check = true;
+        }
+    }//GEN-LAST:event_vigenteItemStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -161,4 +178,5 @@ public class AgregarCliente extends javax.swing.JPanel {
     private javax.swing.JTextField txtNombre;
     private javax.swing.JCheckBox vigente;
     // End of variables declaration//GEN-END:variables
+    private boolean check;
 }
